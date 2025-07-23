@@ -185,47 +185,31 @@
     }
   }
 
-html, body {
-  height: 100%;
+body {
   margin: 0;
-  padding: 0;
+  height: 100vh;
   background-color: black;
-  font-family: 'Arial Black', Arial, sans-serif;
+
+  background-image:
+    url('/static/images/fichas.png'),
+    url('/static/images/fondo.png');
+
+  background-position:
+    center center,
+    center top;
+
+  background-repeat:
+    no-repeat,
+    no-repeat;
+
+  background-size:
+    cover,   /* fichas cubren toda la pantalla */
+    contain; /* fondo ajustado sin recortar */
+
+  background-attachment:
+    fixed,
+    fixed;
+
   color: white;
-  overflow-x: hidden;
-  position: relative;
+  font-family: Arial, sans-serif;
 }
-
-/* Fondo principal */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('img/fondo.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  z-index: 0; /* Detrás de todo */
-}
-
-/* Fichas encima de contenedores pero debajo de elementos UI importantes */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('img/fichas.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  pointer-events: none; /* No bloquea clics */
-  z-index: 1; /* Sobre contenedores (z-index:1) */
-}
-
-
