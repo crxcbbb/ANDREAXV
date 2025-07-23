@@ -30,6 +30,8 @@
   
 /* Estilo tipo carta blanca translúcida */
 .content-card {
+  position: relative;
+  z-index: 3;
   background-color: rgba(255, 255, 255, 1); /* más blanco translúcido */
   color: black;
   padding: 3rem 1.5rem;
@@ -183,39 +185,46 @@
     }
   }
 
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: black; /* color base si no cargan las imágenes */
-  }
-  
-  body {
-    margin: 0;
-    height: 100vh;
-    background-color: black;
-  
-    background-image:
-      url('img/fichas.png'),
-      url('img/fondo.png');
-  
-    background-position:
-      center center,
-      center top;
-  
-    background-repeat:
-      no-repeat,
-      no-repeat;
-  
-    background-size:
-      cover,
-      auto;
-  
-    background-attachment:
-      fixed,
-      fixed;
-  
-    color: white;
-    font-family: Arial, sans-serif;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  font-family: 'Arial Black', Arial, sans-serif;
+  color: white;
+  overflow-x: hidden;
+  position: relative;
+}
 
-  }
+/* Fondo principal ajustado */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('img/fondo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -3;
+}
+
+/* Fichas encima de todo (decoración superior) */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('img/fichas.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 5; /* 👈 Por encima de contenedores */
+  pointer-events: none; /* Para que no interfiera con clics */
+}
+
