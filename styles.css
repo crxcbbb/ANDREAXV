@@ -51,11 +51,11 @@
     font-size: 6rem;
     color: white;
     text-shadow:
-      0 0 10px #ff0000,
-      0 0 20px #ff0000,
-      0 0 30px #ff0000,
+      0 0 10px #800020,
+      0 0 20px #800020,
+      0 0 30px #800020,
       0 0 40px white,
-      0 0 70px #ff0000;
+      0 0 70px #800020;
     margin-bottom: 2rem;
     user-select: none;
     line-height: 1;
