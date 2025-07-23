@@ -30,18 +30,22 @@
   
   /* Contenedor principal */
     .container {
-      position: relative;
+      position: fixed; /* <- Fija el contenedor */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Centrado */
       z-index: 1;
       text-align: center;
       padding: 3rem 1rem 5rem;
       max-width: 1200px;
-      margin: 0 auto;
-    
-      background-color: rgba(0, 0, 0, 0.6); /* negro con 60% de opacidad */
+      width: 90%;
+      background-color: rgba(0, 0, 0, 0.6); /* fondo negro translúcido */
       border-radius: 16px;
-      backdrop-filter: blur(4px); /* opcional: efecto de desenfoque detrás */
+      backdrop-filter: blur(4px);
+      overflow: auto; /* Para que el contenido interno haga scroll si se necesita */
+      max-height: 90vh; /* evita que se salga de la pantalla */
     }
-  
+
   /* Título grande y llamativo */
   h1 {
     font-size: 6rem;
