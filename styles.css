@@ -185,31 +185,39 @@
     }
   }
 
-body {
-  margin: 0;
-  height: 100vh;
-  background-color: black;
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black; /* color base si no cargan las imágenes */
+  }
+  
+  body {
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+  
+    background-image:
+      url('/static/images/fichas.png'),
+      url('/static/images/fondo.png');
+  
+    background-position:
+      center center,
+      center top;
+  
+    background-repeat:
+      no-repeat,
+      no-repeat;
+  
+    background-size:
+      cover,
+      auto;
+  
+    background-attachment:
+      fixed,
+      fixed;
+  
+    color: white;
+    font-family: Arial, sans-serif;
 
-  background-image:
-    url('/static/images/fichas.png'),
-    url('/static/images/fondo.png');
-
-  background-position:
-    center center,
-    center top;
-
-  background-repeat:
-    no-repeat,
-    no-repeat;
-
-  background-size:
-    cover,   /* fichas cubren toda la pantalla */
-    contain; /* fondo ajustado sin recortar */
-
-  background-attachment:
-    fixed,
-    fixed;
-
-  color: white;
-  font-family: Arial, sans-serif;
-}
+  }
