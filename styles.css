@@ -28,24 +28,22 @@
     filter: blur(80px);
   }
   
-  /* Contenedor principal */
-    .container {
-      position: fixed; /* <- Fija el contenedor */
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); /* Centrado */
-      z-index: 1;
-      text-align: center;
-      padding: 3rem 1rem 5rem;
-      max-width: 1200px;
-      width: 90%;
-      background-color: rgba(255, 255, 255, 1); /* fondo negro translúcido */
-      border-radius: 16px;
-      backdrop-filter: blur(4px);
-      overflow: auto; /* Para que el contenido interno haga scroll si se necesita */
-      max-height: 90vh; /* evita que se salga de la pantalla */
-    }
+/* Estilo tipo carta blanca translúcida */
+.content-card {
+  background-color: rgba(255, 255, 255, 1); /* más blanco translúcido */
+  color: black;
+  padding: 3rem 1.5rem;
+  margin: 2rem auto;
+  border-radius: 16px;
+  max-width: 1200px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+}
 
+  
   /* Título grande y llamativo */
   h1 {
     font-size: 6rem;
@@ -72,25 +70,41 @@
   }
   
   /* Botón rojo con efecto */
-    .btn-form {
-      background-color: #800020; /* vinotinto */
-      color: white;
-      font-size: 1.5rem;
-      padding: 1rem 3rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: box-shadow 0.3s ease;
-      max-width: 100%;
-      display: inline-block;
-      white-space: nowrap;
-    }
-    
-    .btn-form:hover {
-      box-shadow: 0 0 15px 5px #800020; /* brillo vinotinto */
-      background-color: #800020; /* mantiene el color original */
-    }
+.btn-form {
+  background-color: #800020; /* vinotinto */
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease;
+  max-width: 100%;
+  display: inline-block;
+  margin-top: 1.5rem;
+  white-space: nowrap;
+}
+
+.btn-form:hover {
+  box-shadow: 0 0 15px 5px #800020; /* brillo vinotinto */
+  background-color: #800020; /* mantiene el color original */
+}
+
+  .container {
+    position: relative; /* Ya no debe estar fixed si hay scroll */
+    z-index: 1;
+    text-align: center; /* Centra todo el texto */
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    width: 90%;
+    margin: 2rem auto;
+
+    color: white;
+
+    /* Fondo transparente o el que prefieras para esta sección */
+    background-color: transparent; 
+  }
 
   
   /* Mapa con borde blanco y sombra */
@@ -98,11 +112,13 @@
     width: 90%;
     max-width: 700px;
     height: 400px;
+    margin: 0 auto; /* 👈 centra el contenedor horizontalmente */
     border: 3px solid white;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 0 20px #ff0000;
   }
+
   
   iframe {
     width: 100%;
@@ -180,8 +196,8 @@
     background-color: black;
   
     background-image:
-      url('img/fichas.png'),
-      url('img/fondo.png');
+      url('/static/images/fichas.png'),
+      url('/static/images/fondo.png');
   
     background-position:
       center center,
@@ -203,4 +219,3 @@
     font-family: Arial, sans-serif;
 
   }
-  
