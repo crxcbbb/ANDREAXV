@@ -209,7 +209,7 @@ body::before {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  z-index: -2; /* Detrás de todo */
+  z-index: 0; /* Detrás de todo */
 }
 
 /* Fichas encima de contenedores pero debajo de elementos UI importantes */
@@ -225,7 +225,7 @@ body::after {
   background-repeat: no-repeat;
   background-position: center;
   pointer-events: none; /* No bloquea clics */
-  z-index: 2; /* Sobre contenedores (z-index:1) */
+  z-index: 1; /* Sobre contenedores (z-index:1) */
 }
 
 
