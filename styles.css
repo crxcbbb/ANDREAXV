@@ -196,7 +196,7 @@ html, body {
   position: relative;
 }
 
-/* Fondo principal ajustado */
+/* Fondo principal */
 body::before {
   content: "";
   position: fixed;
@@ -209,10 +209,10 @@ body::before {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  z-index: -3;
+  z-index: -2; /* Detrás de todo */
 }
 
-/* Fichas encima de todo (decoración superior) */
+/* Fichas encima de contenedores pero debajo de elementos UI importantes */
 body::after {
   content: "";
   position: fixed;
@@ -224,7 +224,8 @@ body::after {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 5; /* 👈 Por encima de contenedores */
-  pointer-events: none; /* Para que no interfiera con clics */
+  pointer-events: none; /* No bloquea clics */
+  z-index: 2; /* Sobre contenedores (z-index:1) */
 }
+
 
