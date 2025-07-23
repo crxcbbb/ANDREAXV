@@ -29,14 +29,18 @@
   }
   
   /* Contenedor principal */
-  .container {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 3rem 1rem 5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 3rem 1rem 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    
+      background-color: rgba(0, 0, 0, 0.6); /* negro con 60% de opacidad */
+      border-radius: 16px;
+      backdrop-filter: blur(4px); /* opcional: efecto de desenfoque detrás */
+    }
   
   /* Título grande y llamativo */
   h1 {
