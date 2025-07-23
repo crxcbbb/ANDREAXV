@@ -196,8 +196,8 @@
     background-color: black;
   
     background-image:
-      url('/static/images/fichas.png'),
-      url('/static/images/fondo.png');
+      url('img/fichas.png'),
+      url('img/fondo.png');
   
     background-position:
       center center,
