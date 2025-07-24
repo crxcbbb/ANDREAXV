@@ -18,7 +18,7 @@ body {
   color: white;
 
   /* Fondo principal */
-  background: url('/img/fondo.png') no-repeat center center fixed;
+  background: url('img/fondo.png') no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -214,6 +214,6 @@ iframe {
   .corner-img.left,
   .corner-img.right {
     max-width: 60vw;
-    opacity: 0.8; /* opcional: más transparencia en móviles */
+    opacity: 1; /* opcional: más transparencia en móviles */
   }
 }
