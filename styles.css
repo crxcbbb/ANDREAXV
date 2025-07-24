@@ -1,38 +1,47 @@
 /* Reset y estilos base */
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    background: black;
-    font-family: 'Arial Black', Arial, sans-serif;
-    color: white;
-    overflow-x: hidden;
-    position: relative;
-    min-height: 100vh;
-  }
-  
-  /* Luz de faro con degradado radial */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 1200px;
-    height: 1200px;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
-    transform: translate(-50%, -50%) rotate(20deg);
-    pointer-events: none;
-    z-index: 0;
-    filter: blur(80px);
-  }
-  
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  font-family: 'Arial Black', Arial, sans-serif;
+  color: white;
+
+  /* Fondo principal */
+  background: url('/img/fondo.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* (Opcional) Luz de faro con degradado radial — puedes comentar esto si no lo quieres */
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 1200px;
+  height: 1200px;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%) rotate(20deg);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+}
+
 /* Estilo tipo carta blanca translúcida */
 .content-card {
   position: relative;
   z-index: 3;
-  background-color: rgba(255, 255, 255, 1); /* más blanco translúcido */
+  background-color: rgba(255, 255, 255, 0.95); /* blanco casi opaco */
   color: black;
   padding: 3rem 1.5rem;
   margin: 2rem auto;
@@ -45,35 +54,28 @@
   text-align: center;
 }
 
-  
-  /* Título grande y llamativo */
-  h1 {
-    font-size: 6rem;
-    color: white;
-    text-shadow:
-      0 0 10px #800020,
-      0 0 20px #800020,
-      0 0 30px #800020,
-      0 0 40px white,
-      0 0 70px #800020;
-    margin-bottom: 2rem;
-    user-select: none;
-    line-height: 1;
-  }
-  
-  /* Sección de acción */
-  .action-section {
-    margin-top: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 0 1rem;
-  }
-  
-  /* Botón rojo con efecto */
+/* Título grande y llamativo */
+.titulo-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 2rem auto; /* Centrado y espacio inferior */
+  filter: drop-shadow(0 0 15px #800020); /* opcional: brillo vinotinto */
+}
+
+/* Sección de acción */
+.action-section {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+/* Botón rojo con efecto */
 .btn-form {
-  background-color: #800020; /* vinotinto */
+  background-color: #800020;
   color: white;
   font-size: 1.5rem;
   padding: 1rem 3rem;
@@ -89,135 +91,129 @@
 }
 
 .btn-form:hover {
-  box-shadow: 0 0 15px 5px #800020; /* brillo vinotinto */
-  background-color: #800020; /* mantiene el color original */
+  box-shadow: 0 0 15px 5px #800020;
+  background-color: #800020;
 }
 
-  .container {
-    position: relative; /* Ya no debe estar fixed si hay scroll */
-    z-index: 1;
-    text-align: center; /* Centra todo el texto */
-    padding: 3rem 1rem;
-    max-width: 1200px;
-    width: 90%;
-    margin: 2rem auto;
+/* Contenedor general */
+.container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  width: 90%;
+  margin: 2rem auto;
+  color: white;
+  background-color: transparent; /* transparente para ver el fondo */
+}
 
-    color: white;
+/* Mapa con borde blanco y sombra */
+.map-container {
+  width: 90%;
+  max-width: 700px;
+  height: 400px;
+  margin: 0 auto;
+  border: 3px solid white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px #ff0000;
+}
 
-    /* Fondo transparente o el que prefieras para esta sección */
-    background-color: transparent; 
+iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Responsive para tablets y móviles */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 4.5rem;
   }
 
-  
-  /* Mapa con borde blanco y sombra */
+  .btn-form {
+    font-size: 1.3rem;
+    padding: 0.9rem 2.5rem;
+  }
+
   .map-container {
-    width: 90%;
-    max-width: 700px;
-    height: 400px;
-    margin: 0 auto; /* 👈 centra el contenedor horizontalmente */
-    border: 3px solid white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 0 20px #ff0000;
+    height: 350px;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 3.5rem;
   }
 
-  
-  iframe {
+  .btn-form {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+  }
+
+  .map-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 479px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .btn-form {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+  }
+
+  .map-container {
     width: 100%;
-    height: 100%;
-    border: 0;
-  }
-  
-  /* Responsive para tablets y móviles */
-  
-  /* Tablets (ancho entre 768px y 1024px) */
-  @media (max-width: 1024px) {
-    h1 {
-      font-size: 4.5rem;
-    }
-  
-    .btn-form {
-      font-size: 1.3rem;
-      padding: 0.9rem 2.5rem;
-    }
-  
-    .map-container {
-      height: 350px;
-    }
-  }
-  
-  /* Móviles medianos (ancho entre 480px y 767px) */
-  @media (max-width: 767px) {
-    h1 {
-      font-size: 3.5rem;
-    }
-  
-    .btn-form {
-      font-size: 1.2rem;
-      padding: 0.8rem 2rem;
-    }
-  
-    .map-container {
-      height: 300px;
-    }
-  }
-  
-  /* Móviles pequeños (ancho menor a 480px) */
-  @media (max-width: 479px) {
-    h1 {
-      font-size: 2.8rem;
-    }
-  
-    .btn-form {
-      font-size: 1rem;
-      padding: 0.7rem 1.5rem;
-    }
-  
-    .map-container {
-      width: 100%;
-      height: 250px;
-      border-width: 2px;
-      border-radius: 8px;
-    }
-  
-    .action-section {
-      gap: 1.5rem;
-    }
+    height: 250px;
+    border-width: 2px;
+    border-radius: 8px;
   }
 
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: black; /* color base si no cargan las imágenes */
+  .action-section {
+    gap: 1.5rem;
   }
-  
-  body {
-    margin: 0;
-    height: 100vh;
-    background-color: black;
-  
-    background-image:
-      url('img/fichas.png'),
-      url('img/fondo.png');
-  
-    background-position:
-      center center,
-      center top;
-  
-    background-repeat:
-      no-repeat,
-      no-repeat;
-  
-    background-size:
-      cover,
-      auto;
-  
-    background-attachment:
-      fixed,
-      fixed;
-  
-    color: white;
-    font-family: Arial, sans-serif;
+}
 
+/* Imágenes en esquinas inferiores grandes y responsivas */
+.corner-img {
+  position: fixed;
+  bottom: 0;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  z-index: 10;
+  pointer-events: none;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+.corner-img.left {
+  left: 0;
+  max-width: 40vw; /* hasta 40% del ancho visible */
+}
+
+.corner-img.right {
+  right: 0;
+  max-width: 40vw;
+}
+
+/* Responsive ajustes */
+@media (max-width: 1024px) {
+  .corner-img.left,
+  .corner-img.right {
+    max-width: 50vw;
   }
+}
+
+@media (max-width: 600px) {
+  .corner-img.left,
+  .corner-img.right {
+    max-width: 60vw;
+    opacity: 0.8; /* opcional: más transparencia en móviles */
+  }
+}
