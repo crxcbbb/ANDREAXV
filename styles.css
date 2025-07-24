@@ -17,12 +17,16 @@ body {
   font-family: 'Arial Black', Arial, sans-serif;
   color: white;
 
-  /* Fondo principal */
-  background: url('img/fondo.png') no-repeat center center fixed;
+  /* Fondo principal corregido */
+  background-color: black;
+  background-image: url('img/fondo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
 }
 
-/* (Opcional) Luz de faro con degradado radial — puedes comentar esto si no lo quieres */
+/* Luz de faro opcional */
 body::before {
   content: "";
   position: fixed;
@@ -41,7 +45,7 @@ body::before {
 .content-card {
   position: relative;
   z-index: 3;
-  background-color: rgba(255, 255, 255, 0.95); /* blanco casi opaco */
+  background-color: rgba(255, 255, 255, 0.95);
   color: black;
   padding: 3rem 1.5rem;
   margin: 2rem auto;
@@ -54,13 +58,13 @@ body::before {
   text-align: center;
 }
 
-/* Título grande y llamativo */
+/* Imagen del título */
 .titulo-img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto 2rem auto; /* Centrado y espacio inferior */
-  filter: drop-shadow(0 0 15px #800020); /* opcional: brillo vinotinto */
+  margin: 0 auto 2rem auto;
+  filter: drop-shadow(0 0 15px #800020);
 }
 
 /* Sección de acción */
@@ -73,7 +77,7 @@ body::before {
   padding: 0 1rem;
 }
 
-/* Botón rojo con efecto */
+/* Botón */
 .btn-form {
   background-color: #800020;
   color: white;
@@ -95,7 +99,7 @@ body::before {
   background-color: #800020;
 }
 
-/* Contenedor general */
+/* Contenedor principal */
 .container {
   position: relative;
   z-index: 1;
@@ -105,10 +109,10 @@ body::before {
   width: 90%;
   margin: 2rem auto;
   color: white;
-  background-color: transparent; /* transparente para ver el fondo */
+  background-color: transparent;
 }
 
-/* Mapa con borde blanco y sombra */
+/* Mapa */
 .map-container {
   width: 90%;
   max-width: 700px;
@@ -126,7 +130,30 @@ iframe {
   border: 0;
 }
 
-/* Responsive para tablets y móviles */
+/* Imágenes en esquinas inferiores grandes y responsivas */
+.corner-img {
+  position: fixed;
+  bottom: 0;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  z-index: 10;
+  pointer-events: none;
+  object-fit: contain;
+  opacity: 1; /* Corregido: sin transparencia */
+}
+
+.corner-img.left {
+  left: 0;
+  max-width: 40vw;
+}
+
+.corner-img.right {
+  right: 0;
+  max-width: 40vw;
+}
+
+/* Responsive */
 @media (max-width: 1024px) {
   h1 {
     font-size: 4.5rem;
@@ -139,6 +166,11 @@ iframe {
 
   .map-container {
     height: 350px;
+  }
+
+  .corner-img.left,
+  .corner-img.right {
+    max-width: 50vw;
   }
 }
 
@@ -154,6 +186,14 @@ iframe {
 
   .map-container {
     height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .corner-img.left,
+  .corner-img.right {
+    max-width: 60vw;
+    opacity: 1; /* asegurado sin transparencia también en móviles */
   }
 }
 
@@ -179,41 +219,3 @@ iframe {
   }
 }
 
-/* Imágenes en esquinas inferiores grandes y responsivas */
-.corner-img {
-  position: fixed;
-  bottom: 0;
-  max-height: 100vh;
-  width: auto;
-  height: auto;
-  z-index: 10;
-  pointer-events: none;
-  object-fit: contain;
-  opacity: 0.95;
-}
-
-.corner-img.left {
-  left: 0;
-  max-width: 40vw; /* hasta 40% del ancho visible */
-}
-
-.corner-img.right {
-  right: 0;
-  max-width: 40vw;
-}
-
-/* Responsive ajustes */
-@media (max-width: 1024px) {
-  .corner-img.left,
-  .corner-img.right {
-    max-width: 50vw;
-  }
-}
-
-@media (max-width: 600px) {
-  .corner-img.left,
-  .corner-img.right {
-    max-width: 60vw;
-    opacity: 1; /* opcional: más transparencia en móviles */
-  }
-}
