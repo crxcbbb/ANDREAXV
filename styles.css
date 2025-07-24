@@ -16,14 +16,6 @@ body {
   min-height: 100vh;
   font-family: 'Arial Black', Arial, sans-serif;
   color: white;
-
-  /* Fondo principal corregido */
-  background-color: black;
-  background-image: url('img/fondo.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
 }
 
 /* Luz de faro opcional */
@@ -63,7 +55,7 @@ body::before {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 0.5rem auto; /* reducido de 2rem a 0.5rem */
   filter: drop-shadow(0 0 15px #800020);
 }
 
@@ -90,7 +82,7 @@ body::before {
   transition: box-shadow 0.3s ease;
   max-width: 100%;
   display: inline-block;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem; /* reducido de 1.5rem a 0.5rem */
   white-space: nowrap;
 }
 
