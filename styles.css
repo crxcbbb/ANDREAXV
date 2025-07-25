@@ -72,8 +72,18 @@ body {
   word-break: break-word;
 }
 
-.card-message .card-text {
+.card-message.carta1 .card-text {
   color: white;
+  text-shadow: 1.5px 1.5px 6px rgba(0, 0, 0, 0.85);
+  max-width: 100%;           /* Ocupa todo el ancho del contenedor */
+  font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+  line-height: 1.4;
+  user-select: none;
+  padding: 0 0.5rem;         /* Pequeño padding para no pegar texto a los bordes */
+}
+
+.card-message.carta2 .card-text {
+  color: red;
   text-shadow: 1.5px 1.5px 6px rgba(0, 0, 0, 0.85);
   max-width: 100%;           /* Ocupa todo el ancho del contenedor */
   font-size: clamp(0.9rem, 2.5vw, 1.3rem);
