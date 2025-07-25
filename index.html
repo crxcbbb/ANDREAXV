@@ -1,57 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mis 15 años Andrea</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mis 15 años Andrea</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
   
-<body>
+  <body>
   
-  <img src="img/fichasL.png" class="corner-img left" alt="Decoración izquierda">
-  <img src="img/fichasR.png" class="corner-img right" alt="Decoración derecha">
-
-  <!-- CONTENEDOR 1: Título -->
-  <div class="container">
-    <img src="img/titulo.png" alt="Mis 15 años Andrea" class="titulo-img">
-    <a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLScrq_oKAJ4UFYO4l3R6BNHGPMjfnuDVOvyAufBWj64au3lIjQ/viewform?usp=header" target="_blank" rel="noopener noreferrer">
-      Confirma tu asistencia
-    </a>
-  </div>
-
-  <!-- CONTENEDOR 2: Mapa -->
-  <div class="content-card">
-    <h2>Ubicación del evento</h2>
-    <div class="map-container">
-      <iframe
-        loading="lazy"
-        allowfullscreen
-        referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps?q=Urb+Av.+Fco.+de+Miranda+entre+Calle+Santa+Ana+y,+C.+Capitolio,+Caracas&output=embed">
-      </iframe>
+    <video autoplay muted loop playsinline id="background-video">
+      <source src="img/VideoFondo.mp4" type="video/mp4">
+    </video>
+  
+    <img src="img/fichasL.png" class="corner-img left" alt="Decoración izquierda">
+    <img src="img/fichasR.png" class="corner-img right" alt="Decoración derecha">
+  
+    <!-- CONTENEDOR 1: Título -->
+    <div class="container">
+      <img src="img/titulo.png" alt="Mis 15 años Andrea" class="titulo-img">
     </div>
-  </div>
-
-  <!-- CONTENEDOR 3: Dress Code -->
-  <div class="content-card">
-    <h2>Código de vestimenta</h2>
-    <p>Vístete para impresionar: estilo casino elegante.</p>
-    <ul style="list-style: none; padding: 0;">
-      <li>Chicas: Vestido largo o cóctel</li>
-      <li>Chicos: Traje formal o look elegante oscuro</li>
-    </ul>
-  </div>
-
-  <!-- CONTENEDOR 4: Mensaje final -->
-  <div class="content-card">
-    <h2>Mensaje especial</h2>
-    <p>
-      Gracias por ser parte de este momento tan importante.<br>
-      Te espero para celebrar con juegos, luces y mucha diversión.
-    </p>
-  </div>
-
-</body>
+  
+    <!-- CONTENEDOR 2: Mensaje -->
+    <div class="card-message carta1">
+      <div class="card-text">
+        <p>
+          Existen momentos en la vida que imaginamos, soñamos y esperamos.<br>
+          Uno de esos momentos ha llegado y junto con mis padres Karyeli y Oscar y mi hermanita Alanys <br>
+          te queremos invitar a acompañarme en este día tan especial para mí
+        </p>
+      </div>
+    </div>
+  
+    <!-- CONTENEDOR 3: Dress Code -->
+    <div class="card-message carta2">
+      <div class="card-text">
+        <h2>Código de vestimenta</h2>
+        <p>Vístete para impresionar: estilo casino elegante.</p>
+      </div>
+    </div>
+  
+      <!-- CONTENEDOR 4: Mapa -->
+    <div class="content-card">
+      <h2>Ubicación del evento</h2>
+      <div class="map-container">
+        <iframe
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Urb+Av.+Fco.+de+Miranda+entre+Calle+Santa+Ana+y,+C.+Capitolio,+Caracas&output=embed">
+        </iframe>
+      </div>
+    </div>
+  
+  
+    <!-- CONTENEDOR 5: Asistencia -->
+    <div class="content-card">
+      <a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLScrq_oKAJ4UFYO4l3R6BNHGPMjfnuDVOvyAufBWj64au3lIjQ/viewform?usp=header" target="_blank" rel="noopener noreferrer">
+        Confirma tu asistencia
+      </a>
+    </div>
+  
+  </body>
 </html>
 
