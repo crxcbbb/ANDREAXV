@@ -7,7 +7,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: black;
+  background-color: transparent; /* Cambiado de 'black' a 'transparent' */
   overflow-x: hidden;
 }
 
@@ -15,29 +15,29 @@ body {
   position: relative;
   min-height: 100vh;
   font-family: 'Arial Black', Arial, sans-serif;
-  color: white;
+  color: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.8); /* Fondo semitransparente encima del video */
+  z-index: 0;
 }
 
-/* Luz de faro opcional */
-body::before {
-  content: "";
+#background-video {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 1200px;
-  height: 1200px;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
-  transform: translate(-50%, -50%) rotate(20deg);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -10; /* Asegura que esté al fondo de todo */
+  opacity: 0.3;
   pointer-events: none;
-  z-index: 0;
-  filter: blur(80px);
 }
+
 
 /* Estilo tipo carta blanca translúcida */
 .content-card {
   position: relative;
   z-index: 3;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.25);
   color: black;
   padding: 3rem 1.5rem;
   margin: 2rem auto;
@@ -49,6 +49,58 @@ body::before {
   -webkit-backdrop-filter: blur(10px);
   text-align: center;
 }
+
+/* Carta mensaje */
+
+.card-message {
+  width: 80vw;              /* Ocupa casi todo el ancho en móvil */
+  max-width: 800px;         /* Limita ancho máximo en desktop */
+  aspect-ratio: 2 / 3;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 1rem auto;
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
+  position: relative;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.card-message .card-text {
+  color: white;
+  text-shadow: 1.5px 1.5px 6px rgba(0, 0, 0, 0.85);
+  max-width: 100%;           /* Ocupa todo el ancho del contenedor */
+  font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+  line-height: 1.4;
+  user-select: none;
+  padding: 0 0.5rem;         /* Pequeño padding para no pegar texto a los bordes */
+}
+
+.card-message h2 {
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  margin-bottom: 0.5rem;
+  word-break: break-word;    /* Evita que el título se salga */
+}
+
+.card-message p {
+  margin: 0;
+  word-break: break-word;    /* Texto adaptativo */
+}
+
+.card-message.carta1 {
+  background-image: url('img/cartaM.png');
+}
+
+.card-message.carta2 {
+  background-image: url('img/cartaD.png');
+}
+
 
 /* Imagen del título */
 .titulo-img {
